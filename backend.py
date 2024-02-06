@@ -9,9 +9,7 @@ class ChatBot:
     def get_response(self, user_input):
         response = openai.chat.completions.create(
             model="gpt-3.5-turbo-0125",
-            messages=[
-                {"role": "user", "content": user_input}
-            ]
+            messages=[{"role": "user", "content": user_input}]
         ).choices[0].message.content
         return response
 
